@@ -1,4 +1,4 @@
-import {StylesTitle, StylesSubTitle, Avatar} from './../components/Styles'
+import {StylesTitle, StylesSubTitle, Avatar, StyledButton, ButtonGroup} from '../components/Styles'
 import Logo from './../assets/logo.png'
 
 const Home = () => {
@@ -16,12 +16,15 @@ const Home = () => {
             }}>
                 <Avatar image={Logo} />
             </div>
-            <StylesTitle size={65}>
-                Welcome
-            </StylesTitle>
-            <StylesSubTitle size={25}>
-                Feel free to explore.
-            </StylesSubTitle>
+
+            <StylesTitle size={65}>Welcome</StylesTitle>
+
+            <StylesSubTitle size={25}>Feel free to explore.</StylesSubTitle>
+
+            <ButtonGroup>
+                <StyledButton to="/login">Login</StyledButton>
+                <StyledButton to="/signup">SignUp</StyledButton>
+            </ButtonGroup>
         </div>
     )
 }

@@ -1,14 +1,21 @@
 // Pages
-import Home from './pages/home.jsx' 
+import Home from './pages/Home.jsx' 
 
 //  Styled Components
 import {StyledContainer} from './components/Styles.js'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom'
 
 function App() {
   return (
-    <StyledContainer>
-      <Home />
-    </StyledContainer>
+    <Router>
+      <StyledContainer>
+        <Home />
+      </StyledContainer>
+    </Router>
   );
 }
 

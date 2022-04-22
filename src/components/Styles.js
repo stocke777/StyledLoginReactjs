@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import background from './../assets/bg.jpg';
 
+import {Link} from 'react-router-dom';
+
 export const colors = {
     primary: "#fff",
     theme: "#BE185D",
@@ -50,4 +52,31 @@ export const Avatar = styled.div`
     background-size: cover;
     background-position: center;
     margin: auto;
+`
+
+export const StyledButton = styled(Link)`
+    padding: 10px;
+    width: 150px;
+    background-color: transaparent;
+    font-size: 16px;
+    border: 3px solid ${colors.primary};
+    border-radius: 25px;
+    color: ${colors.primary};
+    text-decoration: none;
+    text-align: center;
+    transition: ease-in-out 0.3s;
+
+    &:hover{
+        background-color: ${colors.primary};
+        color: ${colors.theme};
+        cursor: pointer;
+
+    }
+`;
+
+export const ButtonGroup = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 25px;
 `
