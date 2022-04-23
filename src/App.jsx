@@ -1,5 +1,6 @@
 // Pages
 import Home from './pages/Home.jsx' 
+import Login from './pages/Login.jsx'
 
 //  Styled Components
 import {StyledContainer} from './components/Styles.js'
@@ -13,7 +14,7 @@ function App() {
   return (
     <Router>
       <StyledContainer>
-        <Home />
+        <Login />
       </StyledContainer>
     </Router>
   );

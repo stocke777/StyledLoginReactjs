@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
 export const colors = {
     primary: "#fff",
     theme: "#BE185D",
-    light1: "F3F4F6",
+    light1: "#F3F4F6",
     light2: "#E5E7EB",
     dark1: "#1F2937",
     dark2: "#4B5563",
@@ -80,3 +80,56 @@ export const ButtonGroup = styled.div`
     justify-content: space-around;
     margin-top: 25px;
 `
+
+// Input
+
+export const StyledTextInput = styled.input`
+    width: 280px;
+    padding: 15px;
+    padding-left: 50px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: ${colors.light2};
+    border: 0;
+    display: block;
+    margin: 5px auto 10px auto;
+    transition: ease-in-out 0.3s;
+
+    ${(props) => props.invalid && `background-color: ${colors.red}; color: ${colors.primary};`}
+
+    &:focus{
+        background-color: ${colors.dark2};
+        color: ${colors.primary};
+    }
+`
+
+export const StyledLabel = styled.p`
+    text-align: left;
+    font-size: 13px;
+    font-weight: bold;
+`
+
+export const StyledFormArea = styled.div`
+    background-color: ${(props) => props.bg|| colors.light1};
+    text-align: center;
+    padding: 45px 55px;
+`
+
+export const StyledFormButton = styled.button`
+padding: 10px;
+width: 150px;
+background-color: transaparent;
+font-size: 16px;
+border: 2px solid ${colors.theme};
+border-radius: 25px;
+color: ${colors.theme};
+text-align: center;
+transition: ease-in-out 0.3s;
+
+&:hover{
+    background-color: ${colors.theme};
+    color: ${colors.primary};
+    cursor: pointer;
+
+}
+`;
