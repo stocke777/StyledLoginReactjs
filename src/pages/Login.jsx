@@ -10,6 +10,7 @@ import {
 } from './../components/Styles'
 
 import Logo from './../assets/logo.png'
+import { TextInput } from '../components/Formlib';
 
 import {Formik, Form} from 'formik';
 
@@ -25,7 +26,20 @@ const Login = () =>{
                 <Formik>
                     {()=>(
                         <Form>
+                            <TextInput 
+                                name = "email"
+                                type = "text"
+                                label = "Email Address"
+                                placeholder = "abc@gmail.com"
+                            />
                             
+                            <TextInput 
+                                name = "password"
+                                type = "password"
+                                label = "Password"
+                                placeholder = "********"
+                                
+                            />
                         </Form>
                     )}
                 </Formik>
