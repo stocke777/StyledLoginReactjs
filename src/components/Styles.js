@@ -90,6 +90,7 @@ export const StyledTextInput = styled.input`
     font-size: 17px;
     letter-spacing: 1px;
     color: ${colors.light2};
+    outline: 0;
     border: 0;
     display: block;
     margin: 5px auto 10px auto;
@@ -133,3 +134,15 @@ transition: ease-in-out 0.3s;
 
 }
 `;
+
+
+// Icons
+
+export const StyledIcon = styled.p`
+    color: ${colors.dark1};
+    position: absolute;
+    font-size: 21px;
+    top: 35px;
+    ${(props) => props.right && `right: 15px;`}
+    ${(props) => !props.right && `left: 15px;`}
+`

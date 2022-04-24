@@ -6,13 +6,15 @@ import {
     StyledLabel,
     StylesTitle,
     Avatar,
-    colors
+    colors,
+    ButtonGroup
 } from './../components/Styles'
 
 import Logo from './../assets/logo.png'
 import { TextInput } from '../components/Formlib';
 
 import {Formik, Form} from 'formik';
+import {FiMail, FiLock} from 'react-icons/fi'
 
 const Login = () =>{
     return (
@@ -31,15 +33,22 @@ const Login = () =>{
                                 type = "text"
                                 label = "Email Address"
                                 placeholder = "abc@gmail.com"
+                                icon={<FiMail />}
                             />
                             
                             <TextInput 
                                 name = "password"
                                 type = "password"
                                 label = "Password"
-                                placeholder = "********"
-                                
+                                placeholder = "********"  
+                                icon={<FiLock />}
                             />
+
+                            <ButtonGroup>
+                                <StyledFormButton type = "submit">
+                                    Login
+                                </StyledFormButton>
+                            </ButtonGroup>
                         </Form>
                     )}
                 </Formik>
