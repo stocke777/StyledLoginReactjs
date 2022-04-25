@@ -25,7 +25,15 @@ const Login = () =>{
                     Please Enter
                 </StylesTitle>
 
-                <Formik>
+                <Formik 
+                    initialValues={{
+                        email: "",
+                        password: ""
+                    }}
+                    onSubmit = {(values, {setSubmitting})=>{
+                        console.log(values)
+                    }}
+                >
                     {()=>(
                         <Form>
                             <TextInput 

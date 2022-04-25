@@ -13,14 +13,23 @@ export const TextInput = ({icon, ...props}) =>{
     const [show, setShow] = useState(false)
     return (
         <div style={{position: 'relative'}}>
-            <StyledLabel htmlFor = {props.name}>
-                {props.label}
-            </StyledLabel>
-            <StyledTextInput 
+            <StyledLabel htmlFor = {props.name}>{props.label}</StyledLabel>
+            {props.type !== "password" && <StyledTextInput 
                 {...field}
                 {...props}
-            />
+            />}
+
+            {props.type === "password" && 
+                <StyledTextInput 
+                    {...field}
+                    {...props}
+                    type = {show?"text": "password"}
+                />
+            }
+
             <StyledIcon>{icon}</StyledIcon>
+
+
 
             {
                 props.type === "password" &&
