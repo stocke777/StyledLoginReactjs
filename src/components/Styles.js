@@ -136,6 +136,22 @@ transition: ease-in-out 0.3s;
 }
 `;
 
+export const ErrorMsg = styled.div`
+    font-size: 11px;
+    color: ${colors.red};
+    margin-top: -5px;
+    margin-bottom: 10px;
+    test-align: left;
+`
+
+export const ExtraText = styled.p`
+    font-size: ${(props)=>props.size};
+    text-align: center;
+    color: ${(props) => (props.color?props.color: colors.dark2)};
+    padding: 2px;
+    margin-top: 10px;
+`
+
 
 // Icons
 

@@ -10,6 +10,8 @@ import {
     ButtonGroup
 } from './../components/Styles'
 
+import * as  Yup from 'yup';
+
 import Logo from './../assets/logo.png'
 import { TextInput } from '../components/Formlib';
 
@@ -30,6 +32,12 @@ const Login = () =>{
                         email: "",
                         password: ""
                     }}
+
+                    validationSchema = {Yup.object({
+                        email: Yup.string().email("Invalid mail address").required("Required"),
+                        password: Yup.string().min(8, "Password too short").max(30, "Password too long").required("Required"),
+                    })}
+
                     onSubmit = {(values, {setSubmitting})=>{
                         console.log(values)
                     }}
