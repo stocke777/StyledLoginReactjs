@@ -3,7 +3,8 @@ import { useField } from "formik";
 import {
     StyledTextInput,
     StyledLabel,
-    StyledIcon
+    StyledIcon,
+    ErrorMsg, 
 } from './Styles'
 
 import {FiEye, FiEyeOff} from 'react-icons/fi';
@@ -37,6 +38,16 @@ export const TextInput = ({icon, ...props}) =>{
                     {show && <FiEye/>}
                     {!show && <FiEyeOff/>}
                 </StyledIcon>
+            }
+
+            {
+                meta.touched && meta.error ? (
+                    <ErrorMsg>
+                        {meta.error}
+                    </ErrorMsg>
+                ) : (
+                    <ErrorMsg style = {{visibility: "hidden"}}>.</ErrorMsg>
+                )
             }
 
         </div>

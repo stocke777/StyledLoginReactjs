@@ -141,7 +141,8 @@ export const ErrorMsg = styled.div`
     color: ${colors.red};
     margin-top: -5px;
     margin-bottom: 10px;
-    test-align: left;
+    text-align: left;
+    font-weight: bolder;
 `
 
 export const ExtraText = styled.p`
