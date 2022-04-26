@@ -7,7 +7,10 @@ import {
     StylesTitle,
     Avatar,
     colors,
-    ButtonGroup
+    ButtonGroup, 
+    TextLink, 
+    ExtraText,
+    CopyrightText
 } from './../components/Styles'
 
 import * as  Yup from 'yup';
@@ -68,8 +71,13 @@ const Login = () =>{
                         </Form>
                     )}
                 </Formik>
-
+                <ExtraText>
+                    New Here? <TextLink to='/signup' >Signup</TextLink>
+                </ExtraText>
             </StyledFormArea>
+            <CopyrightText>
+                All rights reserved &copy;2022
+            </CopyrightText>
         </div>
     )
 }

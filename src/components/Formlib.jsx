@@ -16,12 +16,14 @@ export const TextInput = ({icon, ...props}) =>{
         <div style={{position: 'relative'}}>
             <StyledLabel htmlFor = {props.name}>{props.label}</StyledLabel>
             {props.type !== "password" && <StyledTextInput 
+                invalid={meta.touched && meta.error}
                 {...field}
                 {...props}
             />}
 
             {props.type === "password" && 
                 <StyledTextInput 
+                    invalid={meta.touched && meta.error}
                     {...field}
                     {...props}
                     type = {show?"text": "password"}

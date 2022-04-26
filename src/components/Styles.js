@@ -13,7 +13,8 @@ export const colors = {
     dark1: "#1F2937",
     dark2: "#4B5563",
     dark3: "#9CA3AF",
-    red: "#DC2626"
+    red: "#DC2626",
+    dark4: "#cecfd1"
 }
 
 export const StyledContainer = styled.div`
@@ -65,6 +66,7 @@ export const StyledButton = styled(Link)`
     text-decoration: none;
     text-align: center;
     transition: ease-in-out 0.3s;
+    outline: 0;
 
     &:hover{
         background-color: ${colors.primary};
@@ -127,6 +129,7 @@ border-radius: 25px;
 color: ${colors.theme};
 text-align: center;
 transition: ease-in-out 0.3s;
+outline: 0;
 
 &:hover{
     background-color: ${colors.theme};
@@ -153,6 +156,18 @@ export const ExtraText = styled.p`
     margin-top: 10px;
 `
 
+export const TextLink = styled(Link)`
+    text-decoration: none;
+    color: ${colors.theme};
+    transition: ease-in-out 0.3s;
+
+    &:hover{
+        text-decoration: underline;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+`
+
 
 // Icons
 
@@ -163,4 +178,13 @@ export const StyledIcon = styled.p`
     top: 35px;
     ${(props) => props.right && `right: 15px;`}
     ${(props) => !props.right && `left: 15px;`}
+`
+// copyright
+export const CopyrightText = styled.p`
+    padding: 5px;
+    margin: 20px;
+    text-align: center;
+    color: ${colors.dark4};
+    font-weight: bolder;
+
 `
