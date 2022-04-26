@@ -16,7 +16,7 @@ import {
 import * as  Yup from 'yup';
 
 
-import {Circles} from "react-loader-spinner";
+import GridLoader from "react-spinners/GridLoader";
 
 import Logo from './../assets/logo.png'
 import { TextInput } from '../components/Formlib';
@@ -71,12 +71,14 @@ const Login = () =>{
                                     Login
                                 </StyledFormButton>}
 
-                                {isSubmitting && <Circles 
+                                {/* {isSubmitting && <Circles 
                                 
                                     color={colors.themes}
                                     height={45}
                                     width={100}
-                                />}
+                                />} */}
+
+                                {isSubmitting && <GridLoader color={"#9F6E8B"} loading={true} size={25} />}
                             </ButtonGroup>
                         </Form>
                     )}
