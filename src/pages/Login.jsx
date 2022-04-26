@@ -15,6 +15,9 @@ import {
 
 import * as  Yup from 'yup';
 
+
+import {Circles} from "react-loader-spinner";
+
 import Logo from './../assets/logo.png'
 import { TextInput } from '../components/Formlib';
 
@@ -45,7 +48,7 @@ const Login = () =>{
                         console.log(values)
                     }}
                 >
-                    {()=>(
+                    {({isSubmitting})=>(
                         <Form>
                             <TextInput 
                                 name = "email"
@@ -64,9 +67,16 @@ const Login = () =>{
                             />
 
                             <ButtonGroup>
-                                <StyledFormButton type = "submit">
+                                {!isSubmitting && <StyledFormButton type = "submit">
                                     Login
-                                </StyledFormButton>
+                                </StyledFormButton>}
+
+                                {isSubmitting && <Circles 
+                                
+                                    color={colors.themes}
+                                    height={45}
+                                    width={100}
+                                />}
                             </ButtonGroup>
                         </Form>
                     )}
