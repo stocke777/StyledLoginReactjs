@@ -87,7 +87,7 @@ const Signup = () =>{
                                 icon={<FiLock />}
                             />
 
-<TextInput 
+                            <TextInput 
                                 name = "repeatPassword"
                                 type = "password"
                                 label = "Repeat Password"
@@ -97,7 +97,7 @@ const Signup = () =>{
 
                             <ButtonGroup>
                                 {!isSubmitting && <StyledFormButton type = "submit">
-                                    Login
+                                    SignUp
                                 </StyledFormButton>}
 
 
@@ -107,7 +107,7 @@ const Signup = () =>{
                     )}
                 </Formik>
                 <ExtraText>
-                    New Here? <TextLink to='/signup' >Signup</TextLink>
+                    Already have an account?<TextLink to='/login' >Login</TextLink>
                 </ExtraText>
             </StyledFormArea>
             <CopyrightText>
