@@ -12,20 +12,26 @@ import {
   Route
 } from 'react-router-dom'
 
+import { useState } from 'react';
 
 function App() {
+  const [text, setText] = useState("this is default text")
+  fetch("http://localhost:5000/")
+    .then(response => response.json())
+    .then(data => setText(JSON.stringify(data)));
   return (
-    <Router>
-      <StyledContainer>
-        <Routes>
-          <Route path='/signup' element={<Signup/>} />
-          <Route path='/login' element={<Login/>} />
-          <Route path='/home' element={<Home/>} />
-          <Route path='/dashboard' element={<Dashboard/>} />
+    // <Router>
+    //   <StyledContainer>
+    //     <Routes>
+    //       <Route path='/signup' element={<Signup/>} />
+    //       <Route path='/login' element={<Login/>} />
+    //       <Route path='/home' element={<Home/>} />
+    //       <Route path='/dashboard' element={<Dashboard/>} />
           
-        </Routes>
-      </StyledContainer>
-    </Router>
+    //     </Routes>
+    //   </StyledContainer>
+    // </Router>
+    <p>{text}</p>
   );
 }
 
