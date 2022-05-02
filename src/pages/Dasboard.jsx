@@ -18,8 +18,6 @@ const Dashboard = () => {
             </div>
 
             <StylesTitle size={65}>Welcome, User</StylesTitle>
-
-
             <ButtonGroup>
                 <StyledButton to="/home">Logout</StyledButton>
             </ButtonGroup>
