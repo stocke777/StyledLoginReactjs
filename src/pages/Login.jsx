@@ -24,6 +24,9 @@ import { TextInput } from '../components/Formlib';
 import {Formik, Form} from 'formik';
 import {FiMail, FiLock} from 'react-icons/fi'
 
+//auth and redux
+import { connect } from 'react-redux';
+
 const Login = () =>{
     return (
         <div>
