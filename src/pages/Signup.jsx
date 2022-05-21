@@ -24,7 +24,13 @@ import { TextInput } from '../components/Formlib';
 import {Formik, Form} from 'formik';
 import {FiMail, FiLock, FiUser, FiCalendar} from 'react-icons/fi'
 
-const Signup = () =>{
+//auth and redux
+import { connect } from 'react-redux';
+import {signupUser} from "./../auth/actions/userActions";
+import { useNavigate } from 'react-router-dom';
+
+const Signup = (signupUser) =>{
+    const history = useNavigate();
     return (
         <div>
             <StyledFormArea>
@@ -50,8 +56,9 @@ const Signup = () =>{
                         repeatPassword: Yup.string().required("Required").oneOf([Yup.ref("password")], "Password")
                     })}
 
-                    onSubmit = {(values, {setSubmitting})=>{
+                    onSubmit = {(values, {setSubmitting, setFieldError})=>{
                         console.log(values)
+                        signupUser(values, history, setFieldError, setSubmitting)
                     }}
                 >
                     {({isSubmitting})=>(
@@ -117,4 +124,5 @@ const Signup = () =>{
     )
 }
 
-export default Signup
+export default connect(null, {signupUser})(Signup);
+// export default Signup
