@@ -31,11 +31,18 @@ import {loginUser} from "./../auth/actions/userActions";
 
 import {login} from "./../features/user";
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = () =>{
     // const history = useNavigate();
+    const navigate = useNavigate();
+    const goToLoginPage = () => navigate('/dashboard');
+    goToLoginPage()
     console.log("inside login")
     const dispatch = useDispatch();
+    const user = useSelector((state)=>state.user.value)
     console.log(login)
     return (
         <div>
@@ -57,8 +64,8 @@ const Login = () =>{
                     })}
 
                     onSubmit = {(values, {setSubmitting, setFieldError})=>{
-                        console.log(values)
-                        dispatch(login({name: "ABC", age: 20, email: "asdadn@gmail.com"}))
+                        console.log(values.email)
+                        dispatch(login({name: "ALOO", age: 99, email: values.email}))
                     }}
                 >
                     {({isSubmitting})=>(

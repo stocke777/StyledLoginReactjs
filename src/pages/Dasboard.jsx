@@ -24,11 +24,8 @@ const Dashboard = () => {
                 <Avatar image={Logo} />
             </div>
 
-            <StylesTitle size={65}>Welcome, {user.name} {user.age}</StylesTitle>
+            <StylesTitle size={65}>Welcome, {user.email}</StylesTitle>
             <ButtonGroup>
-                <button onClick={()=>{
-                    dispatch(login({name: "fsdca", age: 260, email: "asdadn@gmail.com"}))
-                }}>CHANGE</button>
                 <StyledButton to="/home">Logout</StyledButton>
             </ButtonGroup>
         </div>
