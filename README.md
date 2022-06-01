@@ -1,1 +1,1 @@
-React Login Page using Styled-Components.
+React Login Page using Styled-Components with Redux handling.
