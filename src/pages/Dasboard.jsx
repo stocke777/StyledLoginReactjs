@@ -1,7 +1,13 @@
 import {StylesTitle, StylesSubTitle, Avatar, StyledButton, ButtonGroup} from '../components/Styles'
 import Logo from './../assets/logo.png'
+import { useSelector } from 'react-redux';
+
+import {login} from "./../features/user";
+import { useDispatch } from 'react-redux';
 
 const Dashboard = () => {
+    const dispatch = useDispatch()
+    const user = useSelector((state)=>state.user.value)
     return (
         <div>
             <div style={{
@@ -17,8 +23,11 @@ const Dashboard = () => {
                 <Avatar image={Logo} />
             </div>
 
-            <StylesTitle size={65}>Welcome, User</StylesTitle>
+            <StylesTitle size={65}>Welcome, {user.name} {user.age}</StylesTitle>
             <ButtonGroup>
+                <button onClick={()=>{
+                    dispatch(login({name: "fsdca", age: 260, email: "asdadn@gmail.com"}))
+                }}>CHANGE</button>
                 <StyledButton to="/home">Logout</StyledButton>
             </ButtonGroup>
         </div>

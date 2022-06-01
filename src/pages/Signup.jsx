@@ -25,12 +25,12 @@ import {Formik, Form} from 'formik';
 import {FiMail, FiLock, FiUser, FiCalendar} from 'react-icons/fi'
 
 //auth and redux
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import {signupUser} from "./../auth/actions/userActions";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
-const Signup = (signupUser) =>{
-    const history = useNavigate();
+const Signup = () =>{
+    // const history = useNavigate();
     return (
         <div>
             <StyledFormArea>
@@ -58,7 +58,7 @@ const Signup = (signupUser) =>{
 
                     onSubmit = {(values, {setSubmitting, setFieldError})=>{
                         console.log(values)
-                        signupUser(values, history, setFieldError, setSubmitting)
+                        signupUser(values, setFieldError, setSubmitting)
                     }}
                 >
                     {({isSubmitting})=>(
@@ -124,5 +124,5 @@ const Signup = (signupUser) =>{
     )
 }
 
-export default connect(null, {signupUser})(Signup);
-// export default Signup
+// export default connect(null, {signupUser})(Signup);
+export default Signup

@@ -4,9 +4,16 @@ import './index.css';
 import App from './App';
 
 
-//auth stuff
+//redux
 import {Provider} from 'react-redux';
-import store from "./auth/store";
+import {configureStore} from '@reduxjs/toolkit';
+import userReducer from "./features/user"
+
+const store = configureStore({
+  reducer: {
+    user: userReducer,
+  }
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -186,5 +186,4 @@ export const CopyrightText = styled.p`
     text-align: center;
     color: ${colors.dark4};
     font-weight: bolder;
-
 `

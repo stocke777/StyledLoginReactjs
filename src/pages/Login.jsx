@@ -25,12 +25,18 @@ import {Formik, Form} from 'formik';
 import {FiMail, FiLock} from 'react-icons/fi'
 
 //auth and redux
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import {loginUser} from "./../auth/actions/userActions";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
-const Login = ({loginUser}) =>{
-    const history = useNavigate();
+import {login} from "./../features/user";
+import { useDispatch } from 'react-redux';
+
+const Login = () =>{
+    // const history = useNavigate();
+    console.log("inside login")
+    const dispatch = useDispatch();
+    console.log(login)
     return (
         <div>
             <StyledFormArea>
@@ -52,7 +58,7 @@ const Login = ({loginUser}) =>{
 
                     onSubmit = {(values, {setSubmitting, setFieldError})=>{
                         console.log(values)
-                        loginUser(values, history, setFieldError, setSubmitting);
+                        dispatch(login({name: "ABC", age: 20, email: "asdadn@gmail.com"}))
                     }}
                 >
                     {({isSubmitting})=>(
@@ -95,5 +101,5 @@ const Login = ({loginUser}) =>{
     )
 }
 
-export default connect(null, {loginUser})(Login);
-// export default Login
+// export default connect(null, {loginUser})(Login);
+export default Login
