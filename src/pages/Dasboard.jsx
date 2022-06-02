@@ -2,7 +2,7 @@ import {StylesTitle, StylesSubTitle, Avatar, StyledButton, ButtonGroup} from '..
 import Logo from './../assets/logo.png'
 import { useSelector } from 'react-redux';
 
-import {login} from "./../features/user";
+import {login, logout} from "./../features/user";
 import { useDispatch } from 'react-redux';
 
 const Dashboard = () => {
@@ -26,7 +26,9 @@ const Dashboard = () => {
 
             <StylesTitle size={65}>Welcome, {user.email}</StylesTitle>
             <ButtonGroup>
-                <StyledButton to="/home">Logout</StyledButton>
+                <StyledButton to="/home" onClick={()=>{
+                    dispatch(logout())
+                }}>Logout</StyledButton>
             </ButtonGroup>
         </div>
     )

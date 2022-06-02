@@ -36,14 +36,14 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Login = () =>{
-    // const history = useNavigate();
+
     const navigate = useNavigate();
     const goToLoginPage = () => navigate('/dashboard');
     goToLoginPage()
-    console.log("inside login")
+
     const dispatch = useDispatch();
     const user = useSelector((state)=>state.user.value)
-    console.log(login)
+
     return (
         <div>
             <StyledFormArea>
@@ -65,7 +65,7 @@ const Login = () =>{
 
                     onSubmit = {(values, {setSubmitting, setFieldError})=>{
                         console.log(values.email)
-                        dispatch(login({name: "ALOO", age: 99, email: values.email}))
+                        dispatch(login({name: "NewName", age: 99, email: values.email}))
                     }}
                 >
                     {({isSubmitting})=>(
