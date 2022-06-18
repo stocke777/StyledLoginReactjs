@@ -26,7 +26,7 @@ const Dashboard = () => {
 
             <StylesTitle size={65}>Welcome, {user.email}</StylesTitle>
             <ButtonGroup>
-                <StyledButton to="/home" onClick={()=>{
+                <StyledButton to="/" onClick={()=>{
                     dispatch(logout())
                 }}>Logout</StyledButton>
             </ButtonGroup>
