@@ -1,9 +1,7 @@
 
 import {
     StyledFormArea,
-    StyledTextInput,
     StyledFormButton,
-    StyledLabel,
     StylesTitle,
     Avatar,
     colors,

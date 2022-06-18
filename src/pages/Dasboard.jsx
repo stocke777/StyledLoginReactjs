@@ -1,8 +1,8 @@
-import {StylesTitle, StylesSubTitle, Avatar, StyledButton, ButtonGroup} from '../components/Styles'
+import {StylesTitle, Avatar, StyledButton, ButtonGroup} from '../components/Styles'
 import Logo from './../assets/logo.png'
 import { useSelector } from 'react-redux';
 
-import {login, logout} from "./../features/user";
+import {logout} from "./../features/user";
 import { useDispatch } from 'react-redux';
 
 const Dashboard = () => {

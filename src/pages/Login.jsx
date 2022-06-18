@@ -1,9 +1,7 @@
 
 import {
     StyledFormArea,
-    StyledTextInput,
     StyledFormButton,
-    StyledLabel,
     StylesTitle,
     Avatar,
     colors,
@@ -26,12 +24,12 @@ import {FiMail, FiLock} from 'react-icons/fi'
 
 //auth and redux
 // import { connect } from 'react-redux';
-import {loginUser} from "./../auth/actions/userActions";
+// import {loginUser} from "./../auth/actions/userActions";
 // import { useNavigate } from 'react-router-dom';
 
 import {login} from "./../features/user";
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -42,7 +40,7 @@ const Login = () =>{
     goToLoginPage()
 
     const dispatch = useDispatch();
-    const user = useSelector((state)=>state.user.value)
+    // const user = useSelector((state)=>state.user.value)
 
     return (
         <div>
